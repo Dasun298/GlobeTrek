@@ -63,6 +63,7 @@ function homeEscape($value) {
             <a href="index.php" class="active">Home</a>
             <a href="#destinations">Destinations</a>
             <a href="packages.php">Tour Packages</a>
+            <a href="about.php">About</a>
             <a href="contact.php">Contact</a>
 
             <?php if ($isLoggedIn): ?>
