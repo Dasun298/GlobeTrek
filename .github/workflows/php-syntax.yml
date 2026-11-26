@@ -1,0 +1,15 @@
+name: PHP and basic public artifact checks
+on: [push, pull_request]
+jobs:
+  php-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: PHP syntax
+        run: find . -type f -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: Sensitive-file presence check
+        run: |
+          test ! -e includes/db.local.php
+          test ! -e 'deta base/globetrek.sql'
+          test ! -e generate_password.php
+          ! grep -Eqi 'INSERT INTO `(users|admins|staff|bookings|hotel_bookings|payments)`' database/globetrek_demo.sql
