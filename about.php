@@ -114,6 +114,29 @@ $userRole = (string) ($_SESSION['role'] ?? '');
         </div>
     </section>
 
+    <section class="about-demo-form">
+        <div class="container about-demo-grid">
+            <div class="about-demo-copy">
+                <span class="section-label">GET IN TOUCH</span>
+                <h2>Tell us what inspires you.</h2>
+                <p>Share a little about the trip you have in mind. This demo form is for preview only and does not send or store your message.</p>
+            </div>
+            <form class="about-demo-card" id="aboutDemoForm">
+                <label for="demoName">Your name</label>
+                <input id="demoName" name="name" type="text" autocomplete="name" maxlength="100" placeholder="e.g. Alex Silva" required>
+
+                <label for="demoEmail">Email address</label>
+                <input id="demoEmail" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required>
+
+                <label for="demoMessage">Your travel idea</label>
+                <textarea id="demoMessage" name="message" rows="4" maxlength="1000" placeholder="Where would you love to go?" required></textarea>
+
+                <button class="btn btn-primary" type="submit">Send a Demo Message ↗</button>
+                <p class="about-demo-status" id="aboutDemoStatus" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </section>
+
     <section class="about-cta">
         <div class="container about-cta-content">
             <div>
@@ -150,5 +173,14 @@ $userRole = (string) ($_SESSION['role'] ?? '');
         <p>Made for the love of travel.</p>
     </div>
 </footer>
+<script>
+    document.getElementById('aboutDemoForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const name = document.getElementById('demoName').value.trim();
+        document.getElementById('aboutDemoStatus').textContent =
+            'Thanks, ' + name + '! This demo does not send or store your message.';
+        this.reset();
+    });
+</script>
 </body>
 </html>

@@ -152,6 +152,82 @@
     line-height: 1.8;
 }
 
+.about-demo-form {
+    padding: 90px 0;
+    background: #f4f9fa;
+}
+
+.about-demo-grid {
+    display: grid;
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    gap: clamp(35px, 7vw, 90px);
+    align-items: start;
+}
+
+.about-demo-copy h2 {
+    margin: 12px 0 18px;
+    color: #102d3d;
+    font: 500 clamp(32px, 3.8vw, 48px)/1.22 'Playfair Display', Georgia, serif;
+}
+
+.about-demo-copy p {
+    max-width: 430px;
+    color: #607887;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.about-demo-card {
+    display: grid;
+    gap: 12px;
+    padding: clamp(22px, 4vw, 38px);
+    border: 1px solid #e1ebf0;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 12px 38px rgba(12, 50, 72, .07);
+}
+
+.about-demo-card label {
+    margin-top: 6px;
+    color: #183746;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.about-demo-card input,
+.about-demo-card textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #d6e5eb;
+    border-radius: 7px;
+    background: #fbfefe;
+    color: #173d4b;
+    font: 14px 'DM Sans', Arial, sans-serif;
+}
+
+.about-demo-card input:focus,
+.about-demo-card textarea:focus {
+    outline: 3px solid #b6eaf1;
+    border-color: #098bad;
+}
+
+.about-demo-card textarea {
+    resize: vertical;
+}
+
+.about-demo-card .btn {
+    justify-self: start;
+    margin-top: 8px;
+    border: 0;
+}
+
+.about-demo-status {
+    min-height: 1.5em;
+    color: #206641;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
 .about-cta {
     padding: 70px 0;
     background: #fff;
@@ -182,7 +258,8 @@
     }
 
     .about-story,
-    .about-values {
+    .about-values,
+    .about-demo-form {
         padding: 65px 0 75px;
     }
 
@@ -202,6 +279,11 @@
 
     .about-value-card {
         min-height: auto;
+    }
+
+    .about-demo-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
     }
 
     .about-cta-content {
